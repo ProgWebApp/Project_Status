@@ -1,0 +1,16 @@
+---
+name: project-status-dev
+
+services:
+  backend:
+    image: project-status-backend:dev
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.dev
+    volumes:
+      - ../migrations:/pb/pb_migrations:rw
+      - ../hooks:/pb/pb_hooks:rw
+      - ../data:/pb/pb_data:rw
+    ports:
+      - 8090:8090
+    restart: 'no'
