@@ -1,0 +1,76 @@
+@startuml Chazy
+
+hide circle
+
+entity users {
+    *id: string
+    --
+    username : string
+}
+
+entity groups {
+    *id: string
+    --
+    name: string
+    color: string
+}
+
+entity technologies {
+    *id: string
+    --
+    name: string
+    type: string enum (frontend, backend, database, infrastructure, cloud)
+    color: string
+}
+
+entity links {
+    *id: string
+    --
+    projectId: string
+    name: string
+    type: string enum (frontend, backend, docs)
+    env: string enum (dev, preprod, prod)
+}
+
+entity gits {
+    *id: string
+    --
+    projectId: string
+    main: boolean
+    provider: string enum (gitlab, github, gitea)
+    type: string enum (ssh, https, page)
+    url: string
+}
+
+entity rewards {
+    *id: string
+    --
+    projectId: string
+    name: string
+    description: string
+    link: string
+    completed: boolean
+}
+
+entity projects {
+    *id: string
+    --
+    name: string
+    description: text
+    icon: string (base64)
+    author: string
+    category: string enum (library, cli, gui, web app, web frontend, web backend, machine, electronic)
+    status: string enum (preparation pending, prepared, pending, in progress, pending update, in update, complete, break, archived)
+    deploy: string enum (deployment pending, prepared, in progress, pending update, in update, active, inactive)
+    groupId: string
+    gits: gits[]
+    links: links[]
+    technologies: technologies[]
+    rewards: rewards[]
+    members: users[]
+    updatedAt: datetime
+    createdAt: datetime
+    deletedAt: datetime
+}
+
+@enduml
