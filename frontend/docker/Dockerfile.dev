@@ -1,3 +1,0 @@
-FROM oven/bun:1.0
-WORKDIR /usr/app
-USER 1000

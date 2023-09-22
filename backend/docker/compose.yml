@@ -1,5 +1,5 @@
 ---
-name: project-status-dev
+name: project-status
 
 volumes:
   backend-data:

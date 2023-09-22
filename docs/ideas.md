@@ -11,12 +11,8 @@
 
 ## Upgrade Ideas
 
-- TODO
+- Nothing.
 
 ## Technologies Addons Ideas
 
-- Frontend :
-  - ESLint
-  - Prettier
-  - CommitLint
-  - [Standard Version for automatic changelog and release generation](https://blog.logrocket.com/automatically-generate-and-release-a-changelog-with-node-js/)
+- Nothing.

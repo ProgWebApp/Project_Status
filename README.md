@@ -27,23 +27,6 @@ You can use this Docker Compose to launch this whole project in production :
 
 ```yaml
 # TODO Docker Compose with production image
----
-name: project-status
-
-networks:
-  project-status-net:
-    name: project-status-net
-
-volumes:
-  project-status-data:
-    name: project-status-data
-
-services:
-  project-status-frontend:
-    container_name: project-status-frontend
-
-  project-status-backend:
-    container_name: project-status-backend
 ```
 
 ## Development
@@ -61,15 +44,6 @@ services:
 
 The **MakeFile way** with **Docker** :
 
-- **Frontend** :
-  - `make frontend-bash` : Launch Bash in Frontend Development Environment
-  - `make frontend-build-dev` : Build Frontend for Development
-  - `make frontend-start-dev` : Start Frontend Development Server
-  - `make frontend-lint` : Lint Frontend source codes
-  - `make frontend-format` : Format Frontend source codes
-  - `make frontend-build` : Build Frontend for Production
-  - `make frontend-start` : Start Frontend Production Server
-  - `make frontend-publish` : Publish Frontend Production Image
 - **Backend** :
   - `make backend-bash` : Launch Bash in Backend Development Environment
   - `make backend-build-dev` : Build Backend for Development
@@ -86,17 +60,12 @@ The **MakeFile way** with **Docker** :
 
 ### Access
 
-- **Frontend** :
-  - [Local](http://localhost:3000)
 - **Backend** :
   - [Local Admin](http://localhost:8090/_/)
   - [Local API](http://localhost:8090/api/)
 
 ## Technologies
 
-- **Frontend** :
-  - **Framework** : VueJS 3
-  - **CSS Framework** : Vuetify 3
 - **Backend** :
   - **Framework** : PocketBase
   - **Database** : SQLite
