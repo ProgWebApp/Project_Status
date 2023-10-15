@@ -1,9 +1,6 @@
 ---
 name: project-status
 
-volumes:
-  backend-data:
-
 services:
   backend:
     image: progower/project-status-backend:${BACKEND_VERSION:-1.0.0}
@@ -13,7 +10,7 @@ services:
     environment:
       PB_ENCRYPTION_KEY: '${BACKEND_ENCRYPTION_KEY:-RANDOM_32_CHARACTERS}'
     volumes:
-      - backend-data:/pb/pb_data:rw
+      - ./data:/pb/pb_data:rw
     ports:
       - 8090:8090
     restart: 'no'

@@ -22,4 +22,4 @@ COPY --chown=1000:1000 ./migrations /pb/pb_migrations
 
 COPY --chown=1000:1000 ./hooks /pb/pb_hooks
 
-CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8090", '--encryptionEnv=PB_ENCRYPTION_KEY']
+CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8090", "--encryptionEnv=PB_ENCRYPTION_KEY"]
