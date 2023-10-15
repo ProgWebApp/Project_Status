@@ -1,0 +1,56 @@
+@startuml Project Status
+hide circle
+skinparam classAttributeIconSize 0
+
+class users {
+    * id: varchar
+    --
+    username: varchar
+    email: varchar
+    name: varchar
+    avatar: varchar
+    password: varchar
+    verified: boolean
+    updated: Date
+    created: Date
+}
+
+class tags {
+    * id: varchar
+    ---
+    name: varchar
+}
+
+class links {
+    * id: varchar
+    ---
+    name: varchar
+    type: varchar (enum)
+    url: varchar
+}
+
+class categories {
+    * id: varchar
+    ---
+    name: varchar
+    description: varchar
+}
+
+class projects {
+    * id: varchar
+    ---
+    author: varchar (SK)
+    name: varchar
+    description: text
+    category: varchar (SK)
+    type: varchar (enum)
+    status: varchar (enum)
+    updated: Date
+    created: Date
+}
+
+projects "N" -- "1" users
+projects "N" -- "N" tags
+projects "N" -- "N" links
+projects "N" -- "1" categories
+@enduml

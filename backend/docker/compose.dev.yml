@@ -3,7 +3,7 @@ name: project-status-dev
 
 services:
   backend:
-    image: project-status-backend:dev
+    image: progower/project-status-backend:dev
     build:
       context: ..
       dockerfile: ./docker/Dockerfile.dev

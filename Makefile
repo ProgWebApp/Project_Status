@@ -31,5 +31,4 @@ backend-start-d:
 	docker compose -f ./backend/docker/compose.yml up -d
 
 backend-publish:
-	echo "TODO"
-	docker compose -f ./backend/docker/compose.yml push TODO
+	docker compose -f ./backend/docker/compose.yml push backend

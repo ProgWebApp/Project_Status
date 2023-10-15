@@ -26,7 +26,22 @@ Manage Projects with this web application.
 You can use this Docker Compose to launch this whole project in production :
 
 ```yaml
-# TODO Docker Compose with production image
+---
+name: project-status
+
+volumes:
+  backend-data:
+
+services:
+  backend:
+    image: progower/project-status-backend:${BACKEND_VERSION:-1.0.0}
+    environment:
+      PB_ENCRYPTION_KEY: '${BACKEND_ENCRYPTION_KEY:-RANDOM_32_CHARACTERS}'
+    volumes:
+      - backend-data:/pb/pb_data:rw
+    ports:
+      - 8090:8090
+    restart: always
 ```
 
 ## Development
@@ -75,3 +90,4 @@ The **MakeFile way** with **Docker** :
 - [Ideas](./docs/ideas.md)
 - [Analysis](./docs/analysis.md)
 - [Commands](./docs/commands.md)
+- [Database](./docs/database.md)

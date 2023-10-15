@@ -6,7 +6,7 @@ volumes:
 
 services:
   backend:
-    image: project-status-backend:${BACKEND_VERSION:-1.0.0}
+    image: progower/project-status-backend:${BACKEND_VERSION:-1.0.0}
     build:
       context: ..
       dockerfile: ./docker/Dockerfile
